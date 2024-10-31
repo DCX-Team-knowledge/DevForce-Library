@@ -1,1 +1,25 @@
+<template>
+  <template if:true={conditionToShow}>
+    <slot name="body"></slot>
+  </template>
+  <template if:false={conditionToShow}>
+    <template if:true={hasError}>
+      <div class={centerHeight}>
+        <c-common-state-illustration
+          class={centerWidth}
+          config={illustrationConfig}
+        ></c-common-state-illustration>
+      </div>
+    </template>
+    <template if:false={hasError}>
+      <div class="loading-container">
+        <lightning-spinner
+          alternative-text={statusMessage}
+          variant="brand"
+        ></lightning-spinner>
+        <p class={statusMessageClasses}>{statusMessage}</p>
+      </div>
+    </template>
+  </template>
+</template>
 
