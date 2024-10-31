@@ -1,1 +1,52 @@
 
+<template>
+  <div class="slds-form-element slds-m-bottom_x-small">
+    <label class="slds-form-element__label" for="input">
+      <template if:true={required}>
+        <abbr class="slds-required" title="required">* </abbr>
+      </template>
+      {label}
+    </label>
+    <div class="slds-form-element__control">
+      <input
+        name="input"
+        list={name}
+        placeholder={placeholder}
+        required={required}
+        disabled={disabled}
+        aria-describedby="form-error"
+        aria-invalid="true"
+        class="slds-input"
+        type="text"
+        value={value}
+        onchange={handleChange}
+        onkeyup={handleChange}
+        autocomplete="off"
+      />
+      <template if:true={required}
+        ><div class="slds-form-element__help">
+          This field is required
+        </div></template
+      >
+
+      <datalist
+        id={name}
+        class="
+          slds-listbox slds-listbox_vertical
+          slds-dropdown
+          slds-dropdown_fluid
+          slds-dropdown_length-with-icon-10
+          slds-dropdown_left
+        "
+      >
+        <template for:each={optionValues} for:item="option">
+          <option
+            data-id={option.value}
+            key={option.value}
+            value={option.label}
+          ></option>
+        </template>
+      </datalist>
+    </div>
+  </div>
+</template>
