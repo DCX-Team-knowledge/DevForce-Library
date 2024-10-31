@@ -1,11 +1,3 @@
-
-
-/*
-	Abstract Class for API Clients
-
-	Used to reuse code for other API Clients. Among others the UserApi_Client can
-	be used as an implementation example. 
- */
 abstract public class Abstract_Api_Client {
 
 	private static String AXIS_PRD_API_AUTHORIZATION = 'Authorization';
