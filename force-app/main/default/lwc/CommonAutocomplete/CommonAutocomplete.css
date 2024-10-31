@@ -1,1 +1,4 @@
-
+input::-webkit-calendar-picker-indicator {
+  color: var(--lwc-colorTextIconDefault, rgb(176, 173, 171));
+  opacity: 100;
+}
